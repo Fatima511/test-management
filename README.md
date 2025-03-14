@@ -4,48 +4,142 @@ This Odoo module is designed to manage test cases, test runs, test steps, and bu
 Features
 1. Test Case Management
 
-    Create and manage test cases with details such as title, description, priority, and state.
+    Test Case Lifecycle Management:
 
-    Define pre-conditions and post-conditions for test cases.
+        Track test cases through their lifecycle with states: Draft, Under Review, Approved, Running,  and Executed.
 
-    Associate test cases with projects and components.
+        Automatically log timestamps for key events (e.g., creation date, review date, execution date).
 
-    Track the lifecycle of test cases (Draft, Ready for Review, Approved, Running).
+    State Transitions:
+
+        To Review: Transition a test case from Draft to Under Review.
+
+        Approved: Transition a test case from Under Review to Approved.
+
+        Run: Transition a test case from Approved to Running.
+
+        Set to Draft: Revert a test case from Under Review to Draft.
+
+        Re-run: Re-run a test case from Executed to Running.
+
+    Priority and Severity:
+
+        Set the Priority of a test case (Low, Medium, High, Critical).
+
+        Track the State of a test case (e.g., Draft, Approved, Running).
+
+    Advanced Filters and Grouping:
+
+        Filter test cases by Priority, State, Assignee, and Project.
+
+        Group test cases by State, Project, Component, and Priority.
+
+    Kanban View:
+
+        Visualize test cases in a Kanban board grouped by state.
+
+        Use color-coded progress bars to track test case status.
+
+    Graph and Pivot Views:
+
+        Analyze test case data using graphs (e.g., test cases by state) and pivot tables (e.g., test cases by project and state).
 
 2. Test Run Management
 
-    Create test runs to execute multiple test cases.
+    Test Run Lifecycle Management:
 
-    Track the status of test runs (Draft, In Progress, Completed).
+        Track test runs through their lifecycle with states: Draft, In Progress, and Completed.
 
-    Log execution details, including start and end dates.
+        Automatically log timestamps for key events (e.g., start date, end date).
 
-    Associate test runs with specific test cases.
+    State Transitions:
 
-3. Test Step Management
+        Start Run: Transition a test run from Draft to In Progress.
 
-    Define detailed steps for executing test cases.
+        Complete: Transition a test run from In Progress to Completed and update the test case state to Executed.
 
-    Specify expected and actual results for each step.
+    Test Steps Execution:
 
-    Track the state of test steps (Passed, Failed, Blocked).
+        Execute test steps and log the actual results.
 
-4. Bug Tracking
+        Mark test steps as Passed, Failed, or Blocked.
 
-    Report and manage bugs encountered during testing.
+        Report bugs directly from failed or blocked test steps.
 
-    Associate bugs with specific test cases and test steps.
+    Bug Tracking:
 
-    Track the lifecycle of bugs (New, Confirmed, In Progress, Fixed, Closed).
+        Track bugs associated with a test run.
 
-    Log time spent on bug resolution.
+        View a list of related bugs from the test run form.
 
+    Advanced Filters and Grouping:
 
-6. Dashboards and Reporting
+        Filter test runs by State, Status, Project, and Component.
 
-    Visualize test case, test run, and bug data using graphs, pivot tables, and Kanban views.
+        Group test runs by Test Case, State, Project, Component, and Result.
 
-    Generate reports for test case execution and bug status
+    Graph and Pivot Views:
+
+        Analyze test run data using graphs (e.g., test runs by status) and pivot tables (e.g., test runs by project and component).
+
+3. Bug Tracking
+
+    Bug Lifecycle Management:
+
+        Track bugs through their lifecycle with states: New, Confirmed, In Progress, Fixed, Retesting, Re-opened, and Closed.
+
+        Automatically log timestamps for key events (e.g., reported date, fix start date, fix end date).
+
+    State Transitions:
+
+        Confirm: Transition a bug from New to Confirmed.
+
+        Start Fixing: Transition a bug from Confirmed or Re-opened to In Progress.
+
+        Resolved: Transition a bug from In Progress to Fixed.
+
+        Reopen: Reopen a bug from Fixed to Confirmed using a wizard.
+
+        Closed: Transition a bug from Fixed to Closed.
+
+    Automated Activities:
+
+        Schedule activities for bug assignment, reopening, fixing, and closing.
+
+        Notify users when a bug is assigned, reopened, fixed, or closed.
+
+    Time Tracking:
+
+        Log Fix Start Date and Fix End Date when a bug is fixed.
+
+        Track the time taken to resolve a bug.
+
+    Advanced Filters and Grouping:
+
+        Filter bugs by Severity, Priority, State, Assignee, and Project.
+
+        Group bugs by State, Project, Component, Test Case, Priority, and Severity.
+
+    Kanban View:
+
+        Visualize bugs in a Kanban board grouped by state.
+
+        Use color-coded progress bars to track bug status.
+
+    Graph and Pivot Views:
+
+        Analyze bug data using graphs (e.g., bugs by severity) and pivot tables (e.g., bugs by project and state).
+
+   4. Project Integration:
+       Each project now displays the number of associated bugs and test cases.
+
+        These counts are automatically computed and updated in real-time.
+
+    Quick Access to Bugs and Test Cases:
+
+        From the project form, you can directly access the list of bugs and test cases associated with the project.
+
+        Use the View Bugs and View Test Cases buttons to open filtered lists of bugs and test cases.
 
 Installation
 1. Prerequisites
@@ -73,38 +167,6 @@ Configuration
         Developer: Access to bugs.
 
 
-Usage
-1. Test Cases
-
-    Navigate to Test Management > Test Cases.
-
-    Create a new test case and fill in the details (title, description, priority, etc.).
-
-    Add test steps to the test case.
-
-    Transition the test case through its lifecycle (Draft → Ready for Review → Approved → Running → Exdcuted).
-
-2. Test Runs
-
-    Create a new test run and associate it with test cases using Run button in Approved state
-
-    Execute the test run and log the results for each test case.
-
-3. Bugs
-
-    Report a new bug and associate it with a test case or test step.
-
-    Track the bug's lifecycle and log time spent on resolution.
-
-4. Dashboards
-
-    Visualize test case, test run, and bug data using graphs, pivot tables, and Kanban views.
-
-
-
-License
-
-This module is licensed under the LGPL-3.
 Support
 
 For any issues or questions, please contact:
