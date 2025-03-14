@@ -6,7 +6,7 @@
     'author': 'ApplyIT',
     'category': 'Quality Assurance',
     'price':60,
-    'currency': 'USD'
+    'currency': 'USD',
     'depends': ['base','project','mail'],
     'data': [
         'security/security.xml',
