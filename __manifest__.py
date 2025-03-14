@@ -5,6 +5,8 @@
     'description': 'This Odoo module is designed to manage test cases, test runs, test steps, and bugs in a structured and efficient manner. It provides a comprehensive solution for quality assurance teams to plan, execute, and track testing activities.',
     'author': 'ApplyIT',
     'category': 'Quality Assurance',
+    'price':60,
+    'currency': 'USD'
     'depends': ['base','project','mail'],
     'data': [
         'security/security.xml',
