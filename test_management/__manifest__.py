@@ -25,7 +25,7 @@
         'views/menu.xml',
 
     ],
-    'images': ['static/description/thumbnail.png'],
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': True,
     'license': 'OPL-1',
