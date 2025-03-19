@@ -25,6 +25,7 @@
         'views/menu.xml',
 
     ],
+    'images': ['static/description/thumbnail.png'],
     'installable': True,
     'application': True,
     'license': 'OPL-1',
